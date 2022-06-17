@@ -1,0 +1,11 @@
+<p>
+  <label for="tarefa">Tarefa: </label>
+  <input type="text" id="tarefa" name="tarefa" #nomeTarefa />
+  <button (click)="tarefa.add(nomeTarefa.value); nomeTarefa.value = ''">
+    Adicionar
+  </button>
+</p>
+
+<ul *ngFor="let i of tarefa.show(); index as id">
+  <li>{{ i }} <button (click)="tarefa.del(id)">X</button></li>
+</ul>
